@@ -61,3 +61,5 @@ gem 'bulma-extensions-rails', '~> 1.0.30'
 gem 'devise'
 
 gem 'rails-i18n'
+
+gem "aws-sdk"
