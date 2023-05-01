@@ -1,0 +1,97 @@
+<section class="section">
+    <div class="container">
+        <div class="columns">
+        
+            <!-- 左パネル -->
+            <div class="column is-one-third">
+                <div class="columns is-multiline">
+                
+                    <!-- 上部 -->
+                    <div class="column is-full">
+                        <div class="card">
+                            <!-- アバター -->
+                            <div class="card-content is-horizontal-center is-flex">
+                                <figure class="image is-256x256">
+                                    <%= image_tag avatar_url(current_user), class: "is-rounded" %>
+                                </figure>
+                            </div>
+                            
+                            <div class="card-content">
+                               
+                                <div class="content has-text-centered">
+                                    <p class="title is-5">
+                                        <%= current_user.full_name %>
+                                    </p>
+                                    
+                                </div>
+                                <hr class="h-10">
+                                <div class="media-content">
+                                <label class="AccountInformation__label" for="email">メールアドレス</label>
+                                </div>
+                                <p><%= current_user.email %></p>
+                             <label class="AccountInformation__label" for="password">パスワード</label>
+                                <p class="AccountInformation__value"> ********* </p>
+
+                                    <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
+                                       
+                                    <% end %>                                       
+                                </div>
+                                <hr class="h-10">
+                                
+                                
+                                
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 下部 -->
+                    <div class="column is-full">
+                        <div class="card">
+                            <div class="card-content">
+                                <!-- アカウント詳細 -->
+                                <article>
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p>
+                                                <strong>自己紹介</strong>
+                                                <br>
+                                                <%= current_user.about %>
+                                            </p>
+                                        </div>
+                                        <div class="media-right">
+                                            <i  aria-controls="user-about"></i>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-about', class: 'is-hidden'} do |f| %>
+                                            <div class="field">
+                                                <%= f.text_area :about, autofocus: true, autocomplete: 'form', class: 'input'%>
+                                            </div>
+                                        <% end %>
+                                    </div>
+                                </article>
+                                <hr class="h-10">
+                                
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右側 -->
+            <div class="column">
+                <div class="columns is-multiline">
+                
+                    <!-- 新しい部屋を登録 -->
+                    <div class="column is-one-third has-text-centered">
+                    </div>
+                    <!-- 登録したお部屋-->
+                    <div class="column is-one-third has-text-centered">
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
